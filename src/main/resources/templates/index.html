@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${title}">Finance Notifier</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --accent: #1f7a8c;
+        --text: #1d2430;
+        --muted: #5f6b7a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at top, #d8ecf2 0%, var(--bg) 48%);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      main {
+        width: min(680px, 100%);
+        background: var(--card);
+        border-radius: 16px;
+        box-shadow: 0 16px 40px rgba(27, 44, 71, 0.12);
+        padding: 32px;
+      }
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      }
+
+      p {
+        margin: 0 0 12px;
+        line-height: 1.5;
+      }
+
+      .meta {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      code {
+        background: #e6eef2;
+        color: #224d58;
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 th:text="${message}">Hello World!</h1>
+      <p>Projeto base com Spring Boot para web + API.</p>
+      <p>Teste o endpoint REST em <code>/api/hello</code>.</p>
+      <p class="meta">Gerado em: <span th:text="${generatedAt}">-</span></p>
+    </main>
+  </body>
+</html>
